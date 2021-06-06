@@ -1,0 +1,289 @@
+{
+	"info": {
+		"_postman_id": "420617fe-2abc-4337-9331-8cfcab4a05f7",
+		"name": "Twitter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Contain Response Code\"] = responseCode.code === 200;\r",
+							"tests[\"screen_name\"] = responseBody.has(\"screen_name\");\r",
+							"var jsonData = JSON.parse(responseBody);\r",
+							"//pm.environment.set(\"screen_name\", jsonData.user_mentions.screen_name);\r",
+							"\r",
+							"\r",
+							"//screen_name\r",
+							"\r",
+							"//tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+							"//tests[\"Has Employee Id\"] = responseBody.has(\"id\");\r",
+							"//var jsonData = JSON.parse(responseBody);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "tokenSecret",
+							"value": "{{token_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "{{consumer_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "{{consumer_key}}",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.twitter.com/1.1/statuses/home_timeline.json",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitter",
+						"com"
+					],
+					"path": [
+						"1.1",
+						"statuses",
+						"home_timeline.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://developer.twitter.com/en/docs/twitter-api/v1/tweets/post-and-engage/api-reference/post-statuses-update",
+					"protocol": "https",
+					"host": [
+						"developer",
+						"twitter",
+						"com"
+					],
+					"path": [
+						"en",
+						"docs",
+						"twitter-api",
+						"v1",
+						"tweets",
+						"post-and-engage",
+						"api-reference",
+						"post-statuses-update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "tokenSecret",
+							"value": "{{token_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "{{consumer_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "{{consumer_key}}",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://api.twitter.com/1.1/statuses/update.json?status=My Name is Vyankatesh",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitter",
+						"com"
+					],
+					"path": [
+						"1.1",
+						"statuses",
+						"update.json"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "My Name is Vyankatesh"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "tokenSecret",
+							"value": "{{token_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "{{consumer_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "{{consumer_key}}",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.twitter.com/1.1/search/tweets.jason?q=imVkohli",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitter",
+						"com"
+					],
+					"path": [
+						"1.1",
+						"search",
+						"tweets.jason"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "imVkohli"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
